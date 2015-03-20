@@ -1,10 +1,6 @@
 from unittest import TestCase, main as unittest_main
-from urlparse import urljoin
 
-from python_pin.base import base_uri, pin_key
-from python_pin.auth import HTTPKeyAuth
-
-import requests
+from python_pin.request_wrapper import request_f
 
 
 class TestCharges(TestCase):
@@ -70,7 +66,7 @@ class TestCharges(TestCase):
         }
 
         self.assertEqual(
-            requests.post(url=urljoin(base_uri, 'charges'), data=request, auth=HTTPKeyAuth(pin_key)).json(),
+            request_f(method='POST', path='charges', data=request),
             response
         )
 
