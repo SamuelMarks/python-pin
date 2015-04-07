@@ -6,10 +6,12 @@ python-pin
 Environment variable needs to be setup:
 
     PIN_TEST_SECRET_KEY
-    PIN_SECRET_KEY
+    PIN_TEST_KEY
+    PIN_PROD_SECRET_KEY
+    PIN_PROD_KEY
     PIN_TIER
 
-`PIN_TIER` is set to `test` or `prod`.
+Where `PIN_TIER` is set to `test` or `prod`.
 
 ## Dependency resolution
 
